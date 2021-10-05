@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWIK NOTES</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="dist/tailwind.css">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="">
+
+    <main class="flex h-[100vh]">
+        <!-- sidebar -->
+        <div class="w-1/5 bg-gray-100 p-4">
+            <div class="text-center mx-5 mt-5 mb-10">
+                <h1 class="text-2xl font-bold"><i class="fas fa-sticky-note"></i> KWIK-NOTES</h1>
+            </div>
+            <ul class="mx-auto w-3/4 pl-3">
+                <li class="pl-2 mb-2"><i class="fas fa-search mr-3"></i> Search</li>
+                <li class="pl-2"><i class="fas fa-sticky-note mr-3"></i> Note</li>
+            </ul>
+        </div>
+    
+        <!-- main -->
+        <div class="w-4/5 bg-white">
+            <div class="p-8">
+                <div class="flex justify-between">
+                    <h1 class="text-2xl font-bold">Notes</h1>
+                    <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded shadow">+ Creae new note</button>
+                </div>
+            </div>
+            <hr class="border border-gray-100">
+            <div class="p-8">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-semibold"><i class="fas fa-search"></i> Search notes</h3>
+                    <div>
+                        <button onclick="this.nextElementSibling.classList.toggle('hidden')"
+                            class="px-4 py-2 font-semibold shadow border rounded">
+                            <i class="fas fa-sort"></i> Sort: Chronological</button>
+                        <div class="text-center bg-white font-semibold shadow-md py-4 px-7 absolute hidden">
+                            <ul>
+                                <li>Ascending Order</li>
+                                <li>Descending Order</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="border border-gray-100">
+            <div class="p-8">
+                <h3 class="text-gray-500 font-semibold">PINNED PUBLIC NOTES</h3>
+
+                <div class="grid grid-cols-3 mt-3 gap-4">
+                    <div class="border border-gray-200 p-4 shadow rounded-lg">
+                        <h4 class="font-semibold text-lg">Note Title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eum quidem eligendi natus perspiciatis! Quo, atque 
+                            excepturi illum totam blanditiis, sequi iste vel at 
+                            ullam aliquam omnis hic iure dolores et.</p>
+                    </div>
+                    <div class="border border-gray-200 p-4 shadow rounded-lg">
+                        <h4 class="font-semibold text-lg">Note Title Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eum quidem eligendi natus perspiciatis! Quo, atque 
+                            excepturi illum totam blanditiis, sequi iste vel at 
+                            ullam aliquam omnis hic iure dolores et.</p>
+                    </div>
+                    <div class="border border-gray-200 p-4 shadow rounded-lg">
+                        <h4 class="font-semibold text-lg">Note Title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eum quidem eligendi natus perspiciatis! Quo, atque 
+                            excepturi illum totam blanditiis, sequi iste vel at 
+                            ullam aliquam omnis hic iure dolores et.</p>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+
+</body>
+</html>
