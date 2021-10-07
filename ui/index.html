@@ -46,7 +46,11 @@
             <div class="p-8">
                 <div class="flex justify-between items-center">
                     <h1 class="text-2xl font-bold">Notes</h1>
-                    <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow">+ Creae new note</button>
+                    <button
+                        onclick="document.getElementById('editNoteModal').classList.toggle('hidden')"
+                        class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow">
+                        + Creae new note
+                    </button>
                 </div>
             </div>
             <hr class="border border-gray-100">
@@ -77,7 +81,7 @@
                 <h3 class="text-gray-500 font-semibold">PINNED PUBLIC NOTES</h3>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 mt-3 gap-4">
-                    <div class="border border-gray-200 p-4 shadow rounded-lg cursor-pointer" onclick="showEditNoteModal">
+                    <div class="border border-gray-200 p-4 shadow rounded-lg flex flex-col justify-between">
                         <div class="font-semibold text-lg flex justify-between">
                             <h4>Note Title</h4>
                             <div class="relative">
@@ -93,10 +97,11 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Eum quidem eligendi natus perspiciatis! Quo, atque
-                            excepturi illum totam blanditiis, sequi iste vel at
-                            ullam aliquam omnis hic iure dolores et.</p>
+                        <p class="cursor-pointer"
+                            onclick="document.getElementById('editNoteModal').classList.toggle('hidden')">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            ullam aliquam omnis hic iure dolores et.
+                        </p>
                         <p class="text-gray-500 mt-2">2021-10-06</p>
                     </div>
                     <div class="border border-gray-200 p-4 shadow rounded-lg">
@@ -116,12 +121,12 @@
                             </div>
                         </h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Eum quidem eligendi natus perspiciatis! Quo, atque
-                            excepturi illum totam blanditiis, sequi iste vel at
-                            ullam aliquam omnis hic iure dolores et.</p>
+                            Eum quidem eligendiEum quidem eligendiEum quidem eligendi
+                            Eum quidem eligendiEum quidem eligendiEum quidem eligendi
+                            iure dolores et.</p>
                         <p class="text-gray-500 mt-2">2021-10-06</p>
                     </div>
-                    <div class="border border-gray-200 p-4 shadow rounded-lg">
+                    <div class="border border-gray-200 p-4 shadow rounded-lg flex flex-col justify-between">
                         <div class="font-semibold text-lg flex justify-between">
                             <h4>Note Title</h4>
                             <div class="relative">
@@ -138,8 +143,7 @@
                             </div>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Eum quidem eligendi natus perspiciatis! Quo, atque
-                            excepturi illum totam blanditiis, sequi iste vel at
+                            Eum quidem eligendi natus sequi iste vel at
                             ullam aliquam omnis hic iure dolores et.</p>
                         <p class="text-gray-500 mt-2">2021-10-06</p>
                     </div>
@@ -217,27 +221,35 @@
 
             <!-- edit note modal -->
             <div id="editNoteModal" tabindex="-1" role="dialog" aria-hidden="true"
-                class="absolute inset-0 bg-gray-700 bg-opacity-75 flex justify-center items-center">
-                <div class="w-1/2 bg-white h-2/3 rounded-lg">
-                    <div class="modal-head p-4 h-[11.5%] flex justify-between">
-                        <h3 class="font-bold text-xl text-gray-500">Edit Note <i class="fas fa-pen ml-2"></i></h3>
-                        <span class="text-xl cursor-pointer text-gray-500" onclick="document.getElementById('editNoteModal').classList.toggle('hidden')">&#10006;</span>
-                    </div>
-                    <hr>
-                    <div class="modal-body p-2 h-[87%]">
-                        <form action="" class="h-full flex flex-col justify-between">
-                            <div class="text-lg">
-                                <textarea name="" id="" rows="13" class="w-full focus:outline-none resize-none" placeholder="Note Body"></textarea>
-                            </div>
-                            <hr class="my-2">
-                            <div class="flex justify-end">
-                                <button class=" px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow">Save</button>
-                            </div>
-                        </form>
+                class="absolute inset-0 hidden bg-gray-700 bg-opacity-75 transition-all duration-1000 z-10">
+
+                <div class="flex justify-center items-center h-full">
+                    <div class="w-1/2 bg-white h-2/3 rounded-lg">
+                        <div class="modal-head p-4 h-[11.5%] flex justify-between">
+                            <h3 class="font-bold text-xl text-gray-500">Edit Note <i class="fas fa-pen ml-2"></i></h3>
+                            <span class="text-xl cursor-pointer text-gray-500" onclick="document.getElementById('editNoteModal').classList.toggle('hidden')">&#10006;</span>
+                        </div>
+                        <hr>
+                        <div class="modal-body p-4 h-[87%]">
+                            <p class="mb-2 font-bold text-xl text-gray-600 focus:outline-none"
+                                onclick="if(this.innerText == 'Add Title...') this.innerText = ''"
+                                onblur="if(!this.innerText) this.innerText = 'Add Title...'"
+                                contenteditable="true">
+                                Note Title
+                            </p>
+                            <form action="" class="h-full">
+                                <div class="text-lg text-gray-800">
+                                    <textarea name="" id="" rows="12" class="w-full focus:outline-none resize-none" placeholder="Note Body">Lorem ipsum dolor sit amet consecteturadipisicing elit. Eum quidem eligendi natus perspiciatis! Quo, atqueexcepturi illum totam blanditiis, sequi iste vel atullam aliquam omnis hic iure dolores et.Quo, atqueexcepturi illum totam blanditiis, sequi iste vel atullam aliquam omnis hic iure dolores et.Quo, atqueexcepturi illum totam blanditiis, sequi iste vel atullam aliquam omnis hic iure dolores et.</textarea>
+                                </div>
+                                <hr class="my-2">
+                                <div class="flex justify-end">
+                                    <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow">Save</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
     </main>
