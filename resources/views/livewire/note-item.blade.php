@@ -12,7 +12,7 @@
                         onclick="document.getElementById('noteModal{{$note->id}}').classList.toggle('hidden');
                         this.parentElement.parentElement.classList.toggle('hidden')"
                         class="mb-2 cursor-pointer hover:bg-gray-100">Edit</li>
-                    <li onclick="this.parentElement.parentElement.classList.toggle('hidden')" wire:click="$emitUp('deleteNote','{{$note->id}}');" class="cursor-pointer hover:bg-gray-100">Delete</li>
+                    <li onclick="deleteNote(this,'{{$note->id}}')" class="cursor-pointer hover:bg-gray-100">Delete</li>
                 </ul>
             </div>
         </div>
@@ -24,7 +24,7 @@
         </p>
     </div>
     <div>
-        <p class="text-gray-500 mt-2">2021-10-06</p>
+        <p class="text-gray-500 mt-2">{{ $note->created_at->format('Y-m-d h:i a')}}</p>
     </div>
 
     <!-- edit note modal -->

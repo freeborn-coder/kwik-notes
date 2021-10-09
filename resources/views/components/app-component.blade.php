@@ -27,10 +27,18 @@
     @livewireScripts
 
     <script>
-        Livewire.on('refreshComponent',(msg)=>{
-            console.log('refresh note items');
-            alert('refresh note items');
-        })
+        // Livewire.on('refreshNotes',(msg)=>{
+        //     console.log('refresh note items');
+        //     alert('refresh note items');
+        // });
+
+        const deleteNote = (elem,noteId) => {
+            elem.parentElement.parentElement.classList.toggle('hidden');
+            if(confirm('Delete this note?')){
+                Livewire.emit('deleteNote',noteId);
+            }
+        }
+
     </script>
 </body>
 </html>

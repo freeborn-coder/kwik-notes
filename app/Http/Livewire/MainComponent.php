@@ -11,11 +11,13 @@ class MainComponent extends Component
     public $notes;
 
     protected $listeners = [
-        'deleteNote'
+        'deleteNote',
+        'newNote',
+        'updateNote'
     ];
 
     public function mount(){
-        $this->notes = Note::all();
+        $this->notes = Note::latest()->get();
     }
 
     public function deleteNote(Note $note){
@@ -23,10 +25,12 @@ class MainComponent extends Component
         $index = $this->notes->search(function($item) use ($note){
             return $item->id == $note->id;
         });
-
         $this->notes->forget($index);
         $note->delete();
+    }
 
+    public function newNote(Note $note){
+        $this->notes->prepend($note);
     }
 
     public function render()

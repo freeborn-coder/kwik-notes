@@ -35,7 +35,8 @@
                     <hr class="my-2">
                     <div class="flex justify-end">
                         <button
-                        wire:click.prevent="saveNote('{{$title}}','{{$body}}')"
+                            onclick="document.getElementById('{{ $modal_id }}').classList.toggle('hidden')"
+                            wire:click.prevent="saveNote()"
                             type="button"
                             class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md shadow">
                             Save

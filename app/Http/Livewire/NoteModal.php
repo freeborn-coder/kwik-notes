@@ -25,12 +25,14 @@ class NoteModal extends Component
         $this->modal_id = $modal_id;
     }
 
-    public function saveNote($title, $body){
+    public function saveNote(){
 
         if($this->mode == 'edit'){
             Note::where('id',$this->noteId)->update(['title'=>$this->title,'body'=>$this->body]);
+            $this->emitTo('note-item','updateNote',$this->noteId,$this->title,$this->body);
         }else if($this->mode == 'create'){
-            Note::create(['title'=>$this->title,'body'=>$this->body]);
+            $new = Note::create(['title' => $this->title,'body'=>$this->body]);
+            $this->emitTo('main-component','newNote',$new->id);
         }
     }
 
