@@ -20,17 +20,11 @@
         <!-- sidebar -->
         <x-side-menu/>
 
-        <!-- main -->
-        {{ $slot }}
-
-    </main>
+        <!-- main slot        <!-- main -->
+  </main>
     @livewireScripts
 
     <script>
-        // Livewire.on('refreshNotes',(msg)=>{
-        //     console.log('refresh note items');
-        //     alert('refresh note items');
-        // });
 
         const deleteNote = (elem,noteId) => {
             elem.parentElement.parentElement.classList.toggle('hidden');
