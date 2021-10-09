@@ -1,0 +1,27 @@
+{
+  "name": "kwik-notes",
+  "version": "1.0.0",
+  "description": "notes keeper website",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^10.3.6",
+    "postcss": "^8.3.8",
+    "tailwindcss": "^2.2.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css":"tailwindcss -i ./src/styles.css -o ./dist/tailwind.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeborn-coder/kwik-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freeborn-coder/kwik-notes/issues"
+  },
+  "homepage": "https://github.com/freeborn-coder/kwik-notes#readme"
+}
