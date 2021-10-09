@@ -40,7 +40,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 mt-3 gap-4">
 
                 @foreach ($notes as $note)
-                    <livewire:note-item :note="$note"/>
+                    <livewire:note-item :note="$note" :key="$note->id" />
                 @endforeach
 
             </div>

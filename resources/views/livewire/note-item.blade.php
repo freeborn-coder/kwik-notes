@@ -9,9 +9,10 @@
                 text-gray-500 font-normal z-10 absolute right-0 hidden w-[120px]">
                 <ul>
                     <li
-                        onclick="document.getElementById('noteModal{{$note->id}}').classList.toggle('hidden')"
+                        onclick="document.getElementById('noteModal{{$note->id}}').classList.toggle('hidden');
+                        this.parentElement.parentElement.classList.toggle('hidden')"
                         class="mb-2 cursor-pointer hover:bg-gray-100">Edit</li>
-                    <li wire:click="$emitUp('deleteNote','{{$note->id}}')" class="cursor-pointer hover:bg-gray-100">Delete</li>
+                    <li onclick="this.parentElement.parentElement.classList.toggle('hidden')" wire:click="$emitUp('deleteNote','{{$note->id}}');" class="cursor-pointer hover:bg-gray-100">Delete</li>
                 </ul>
             </div>
         </div>

@@ -27,9 +27,9 @@
     @livewireScripts
 
     <script>
-        Livewire.on('save',(msg)=>{
-            console.log(msg);
-            alert(msg);
+        Livewire.on('refreshComponent',(msg)=>{
+            console.log('refresh note items');
+            alert('refresh note items');
         })
     </script>
 </body>

@@ -10,7 +10,9 @@ class MainComponent extends Component
 
     public $notes;
 
-    protected $listeners = ['deleteNote'];
+    protected $listeners = [
+        'deleteNote'
+    ];
 
     public function mount(){
         $this->notes = Note::all();
@@ -18,12 +20,12 @@ class MainComponent extends Component
 
     public function deleteNote(Note $note){
 
-        $note->delete();
-
         $index = $this->notes->search(function($item) use ($note){
             return $item->id == $note->id;
         });
+
         $this->notes->forget($index);
+        $note->delete();
 
     }
 
