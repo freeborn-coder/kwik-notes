@@ -1,8 +1,8 @@
 <div id="{{ $modal_id }}" tabindex="-1" role="dialog" aria-hidden="true"
     wire:ignore
-    class="absolute inset-0 bg-gray-700 bg-opacity-75 z-10 hidden">
+    class="fixed inset-0 bg-gray-700 bg-opacity-75 z-10 hidden" style="position:fixed">
 
-    <div class="flex justify-center items-center h-full">
+    <div class="fixed flex justify-center items-center h-full">
         <div class="w-1/2 bg-white h-2/3 rounded-lg">
             <div class="modal-head p-4 h-[11.5%] flex justify-between">
                 <h3 class="font-bold text-xl text-gray-500">
@@ -16,21 +16,19 @@
             <hr>
             <div class="modal-body p-4 h-[87%]">
 
-                {{-- <form action="" class="h-full"
-                    wire:submit.prevent="saveNote('{{$title}}','{{$body}}')"> --}}
                 <div class="h-full">
 
                     <input type="text" name="" id=""
                         wire:model.debounce.500ms="title"
-                        class="text-xl font-bold text-gray-600 border-0 focus:outline-none w-full" placeholder="Note Title..."
-                        value="{{$title}}">
+                        class="text-xl font-bold text-gray-600 border-0 focus:outline-none w-full mb-4" placeholder="Note Title..."
+                        value="{{ $title }}">
                     <br>
 
                     <div class="text-lg text-gray-700">
-                        <textarea name="" id="" rows="12"
+                        <textarea name="" id="" rows="11"
                             wire:model.debounce.500ms="body"
                             class="w-full focus:outline-none resize-none placeholder-red-500"
-                            placeholder="Note Body" required>{{$body}}</textarea>
+                            placeholder="Note Body" required>{{ $body }}</textarea>
                     </div>
                     <hr class="my-2">
                     <div class="flex justify-end">
@@ -43,7 +41,7 @@
                         </button>
                     </div>
                 </div>
-                {{-- </form> --}}
+
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@
     <div>
         <p class="cursor-pointer"
             onclick="document.getElementById('noteModal{{$note->id}}').classList.toggle('hidden')">
-            {{ $note->body }}
+            {{ strlen($note->body) > 150 ? substr($note->body,0,150).'....':$note->body }}
         </p>
     </div>
     <div>
