@@ -10,8 +10,7 @@ class NoteItem extends Component
 
     public $note;
 
-    function __construct($note)
-    {
+    public function mount(Note $note){
         $this->note = $note;
     }
 

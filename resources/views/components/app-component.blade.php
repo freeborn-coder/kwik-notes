@@ -24,7 +24,13 @@
         {{ $slot }}
 
     </main>
-
     @livewireScripts
+
+    <script>
+        Livewire.on('save',(msg)=>{
+            console.log(msg);
+            alert(msg);
+        })
+    </script>
 </body>
 </html>
