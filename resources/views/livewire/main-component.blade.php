@@ -15,12 +15,13 @@
             <div class="flex justify-between items-center">
                 <div class="text-lg text-gray-400 w-1/2">
                     <i class="fas fa-search"></i>
-                    <input type="search" name="" placeholder="search" id=""
+                    <input type="text" name="" placeholder="search" id=""
+                        wire:keyup.debounce.500ms="searchNotes($event.target.value)"
                         class="p-2 placeholder-gray-400 rounded-md focus:outline-none w-1/2">
                 </div>
                 <div>
                     <button onclick="this.nextElementSibling.classList.toggle('hidden')"
-                        class="px-4 py-2 font-semibold shadow border rounded">
+                    class="px-4 py-2 font-semibold shadow border rounded">
                         <i class="fas fa-sort"></i> Sort: Chronological</button>
                     <div class="bg-white font-semibold shadow-md py-4 px-7 absolute hidden">
                         <ul class="text-gray-500">

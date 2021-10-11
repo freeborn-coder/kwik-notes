@@ -20,7 +20,8 @@
         <!-- sidebar -->
         <x-side-menu/>
 
-        <!-- main slot        <!-- main -->
+        <!-- main slot -->
+        {{ $slot }}
   </main>
     @livewireScripts
 

@@ -13,7 +13,8 @@ class MainComponent extends Component
     protected $listeners = [
         'deleteNote',
         'newNote',
-        'updateNote'
+        'updateNote',
+        'searchNotes'
     ];
 
     public function mount(){
@@ -31,6 +32,12 @@ class MainComponent extends Component
 
     public function newNote(Note $note){
         $this->notes->prepend($note);
+    }
+
+
+    public function searchNotes($term){
+        $this->notes = Note::where('title','like',"%$term%")
+            ->orWhere('body','like',"%$term%")->latest()->get();
     }
 
     public function render()
