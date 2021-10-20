@@ -23,10 +23,12 @@
                     <button onclick="this.nextElementSibling.classList.toggle('hidden')"
                     class="px-4 py-2 font-semibold shadow border rounded">
                         <i class="fas fa-sort"></i> Sort: Chronological</button>
-                    <div class="bg-white font-semibold shadow-md py-4 px-7 absolute hidden">
+                    <div class="bg-white font-semibold shadow-md py-4 px-7 absolute z-10 hidden">
                         <ul class="text-gray-500">
-                            <li class="mb-2"><a href="">Ascending Order</a></li>
-                            <li class="mb-2"><a href="">Descending Order</a></li>
+                            <li class="mb-2"><a href="">Newest first</a></li>
+                            <li class="mb-2"><a href="">Oldest first</a></li>
+                            <li class="mb-2"><a href="">By title</a></li>
+                            <li class="mb-2"><a href="">By date modified</a></li>
                         </ul>
                     </div>
                 </div>

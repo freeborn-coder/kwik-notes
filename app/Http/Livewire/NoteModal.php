@@ -10,6 +10,7 @@ class NoteModal extends Component
 
     public $noteId, $modal_id;
     public $title, $body;
+    public $mode = 'create';
 
     public function mount($mode = 'edit', $modal_id, Note $note = null, $title = '', $body = ''){
         if($note){
@@ -33,6 +34,7 @@ class NoteModal extends Component
         }else if($this->mode == 'create'){
             $new = Note::create(['title' => $this->title,'body'=>$this->body]);
             $this->emitTo('main-component','newNote',$new->id);
+            $this->reset();
         }
     }
 

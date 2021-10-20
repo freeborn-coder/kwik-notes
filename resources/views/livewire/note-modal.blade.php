@@ -1,8 +1,8 @@
 <div id="{{ $modal_id }}" tabindex="-1" role="dialog" aria-hidden="true"
     wire:ignore
-    class="fixed inset-0 bg-gray-700 bg-opacity-75 z-10 hidden" style="position:fixed">
+    class="fixed inset-0 bg-gray-700 bg-opacity-75 z-10 hidden">
 
-    <div class="fixed flex justify-center items-center h-full">
+    <div class="fixed flex justify-center items-center h-full w-full">
         <div class="w-1/2 bg-white h-2/3 rounded-lg">
             <div class="modal-head p-4 h-[11.5%] flex justify-between">
                 <h3 class="font-bold text-xl text-gray-500">
@@ -27,7 +27,7 @@
                     <div class="text-lg text-gray-700">
                         <textarea name="" id="" rows="11"
                             wire:model.debounce.500ms="body"
-                            class="w-full focus:outline-none resize-none placeholder-red-500"
+                            class="w-full focus:outline-none resize-none"
                             placeholder="Note Body" required>{{ $body }}</textarea>
                     </div>
                     <hr class="my-2">
